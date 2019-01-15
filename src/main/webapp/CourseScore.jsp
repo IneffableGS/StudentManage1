@@ -1,22 +1,25 @@
 <%--
   Created by IntelliJ IDEA.
   User: dell
-  Date: 2019/1/14
-  Time: 21:44
+  Date: 2019/1/15
+  Time: 11:07
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>成绩录入</title>
+    <title>课程成绩</title>
+    <%--课程成绩单，包括：课程信息，选课学生信息，成绩--%>
 </head>
 <body>
-<form method="post" action="/ScoreInput">
-    <input name="cno" id="cno" type="text" placeholder="课程号" required autofocus />
-    <input name="sno" id="sno" type="text" placeholder="学生学号" required />
-    <input name="score" id="score" type="text" placeholder="学生成绩" required />
+<table border="1">
+    <tr><td> 课程号 </td>
+    <tr><td> 课程名 </td>
+    <tr><td> 学生姓名 </td>
+    <tr><td> 学生学号 </td>
+    <tr><td>课程成绩 </td>
 
-    <button type="submit" name="submit" value="确认"/>
-</form>
+</table>
+
 </body>
 </html>

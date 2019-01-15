@@ -8,11 +8,15 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>报告</title>
+    <title>成绩报告</title>
 </head>
 <body>
-<%
+<table border="1">
 
-%>
+        <td><%=session.getAttribute()%></td>
+        <td><%=%></td>
+        <td><%=%></td>
+
+    </tr>
 </body>
 </html>
