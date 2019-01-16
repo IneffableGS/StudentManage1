@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta sname="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta sname="description" content="">
+    <meta sname="author" content="">
 
     <title>注册</title>
 
@@ -21,9 +21,9 @@
       <form class="form-signin" method="post" action="/userSignUp">
         <h2 class="form-signin-heading text-center">用户注册</h2>
         <label for="inputUsername" class="sr-only">用户名</label>
-        <input type="text" id="inputUsername" name="username" class="form-control" placeholder="用户名" required autofocus>
+        <input type="text" id="inputUsername" sname="username" class="form-control" placeholder="用户名" required autofocus>
         <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" name="password" class="form-control" placeholder="密码" required>
+        <input type="password" id="inputPassword" sname="password" class="form-control" placeholder="密码" required>
 
         <div class="container" id="errmsg"><%=session.getAttribute("errmsg") %></div>
 

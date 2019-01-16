@@ -1,5 +1,6 @@
 <%@ page import="java.util.List" %>
-<%@ page import="java.util.LinkedList" %><%--
+<%@ page import="java.util.LinkedList" %>
+<%@ page import="project.obj.Student" %><%--
   Created by IntelliJ IDEA.
   User: wangguanhua
   Date: 2019/1/16
@@ -12,17 +13,26 @@
     <title>课程成绩管理</title>
 </head>
 <body>
+<%
+    LinkedList<Student> students = session.getAttribute("student;")
+%>
 <form method="post" action="/home/courseAdd">
     <%--cno,cname,cdate,cteacher--%>
-    <input id="cname" name="cname" placeholder="课程名" />
-    <select id="cdate" name="cdate">
+    <select id="sno" sname="sno">
+        <%--<option value="" selected>请选择</option>--%>
+
+        <option value="第二学期">第二学期</option>
+        <option value="第三学期">第三学期</option>
+        <option value="第四学期">第四学期</option>
+    </select>
+    <select id="cdate" sname="cdate">
         <option value="第一学期" selected>第一学期</option>
         <option value="第二学期">第二学期</option>
         <option value="第三学期">第三学期</option>
         <option value="第四学期">第四学期</option>
     </select>
-    <input id="cteacher" name="cteacher" placeholder="任课教师" />
-    <button type="submit" >新增课程</button>
+    <input id="cteacher" sname="cteacher" placeholder="成绩" type="number"/>
+    <button type="submit">新增课程</button>
 </form>
 
 <table>
@@ -45,8 +55,7 @@
         <td></td>
     </tr>
     <%
-        List courses = (LinkedList)session.getAttribute("courseList");
-
+        List courses = (LinkedList) session.getAttribute("courseList");
     %>
 </table>
 <ul style="display: inline-block; list-style: none">

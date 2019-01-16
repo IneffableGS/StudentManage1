@@ -11,6 +11,7 @@
     <title>$Title$</title>
   </head>
   <body>
-  $END$
+  <a href="signIn.jsp">登陆</a>
+  <a href="signUn.jsp">注册</a>
   </body>
 </html>

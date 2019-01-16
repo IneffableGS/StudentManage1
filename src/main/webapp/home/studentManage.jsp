@@ -16,7 +16,7 @@
 
 <form method="post" action="/home/studentAdd">
     <%--cno,cname,cdate,cteacher--%>
-    <input id="sname" name="sname" placeholder="学生姓名" />
+    <input id="sname" sname="sname" placeholder="学生姓名" />
     <button type="submit" >新增学生</button>
 </form>
 

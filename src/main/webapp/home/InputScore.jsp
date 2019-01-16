@@ -12,11 +12,11 @@
 </head>
 <body>
 <form method="post" action="/ScoreInput">
-    <input name="cno" id="cno" type="text" placeholder="课程号" required autofocus />
-    <input name="sno" id="sno" type="text" placeholder="学生学号" required />
-    <input name="score" id="score" type="text" placeholder="学生成绩" required />
+    <input sname="cno" id="cno" type="text" placeholder="课程号" required autofocus />
+    <input sname="sno" id="sno" type="text" placeholder="学生学号" required />
+    <input sname="score" id="score" type="text" placeholder="学生成绩" required />
 
-    <button type="submit" name="submit" value="确认"/>
+    <button type="submit" sname="submit" value="确认"/>
 </form>
 </body>
 </html>

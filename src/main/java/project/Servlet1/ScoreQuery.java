@@ -2,6 +2,7 @@ package project.Servlet1;
 
 import project.db.DBConn;
 import project.obj.Course;
+import project.obj.Score;
 import project.obj.Student;
 
 import javax.servlet.ServletException;
@@ -52,12 +53,12 @@ public class ScoreQuery extends HttpServlet {
 //        todo：查询学生列表
         String sql2 = "select * from stuman.studnet";
         List<Student> students = new LinkedList<>();
-        ResultSet rs = dbConn.executeQuery(sql2);
+        ResultSet rs2 = dbConn.executeQuery(sql2);
 
         try {
-            while (rs.next()) {
-                String sname = rs.getString("sname");
-                int sno = rs.getInt("sno");
+            while (rs2.next()) {
+                String sname = rs2.getString("sname");
+                int sno = rs2.getInt("sno");
                 Student student = new Student(sno, sname);
                 System.out.println(student);
                 students.add(student);
@@ -65,16 +66,31 @@ public class ScoreQuery extends HttpServlet {
         } catch (SQLException e) {
             System.err.println(e.getMessage());
         }
-
         session.setAttribute("students",students);
 
 
 //        todo：联合查询已有的成绩表
         String sql3 = "select c.cno,c.cname,c.cdate,c.cteacher,s.sno,s.sname,sc.score from stuman.course c, stuman.student s, stuman.sc sc where c.cno = sc.cno and s.sno = sc.sno;";
+        List<Score> scores = new LinkedList<>();
+        ResultSet rs3 = dbConn.executeQuery(sql3);
 
-
-
-
+        try {
+            while (rs3.next()) {
+                int sno = rs3.getInt("sno");
+                String sname = rs3.getString("sname");
+                int cno = rs3.getInt("cno");
+                String cname = rs3.getString("cname");
+                String cdate = rs3.getString("cdate");
+                String cteacher = rs3.getString("cteacher");
+                int scorevalue = rs3.getInt("score");
+                Score score = new Score(sno, sname, cno, cname, cdate, cteacher, scorevalue);
+                scores.add(score);
+            }
+        } catch (SQLException e) {
+            System.out.println("ERROR! msg:"+e.getMessage());
+        }
+        session.setAttribute("scores", scores);
+        resp.sendRedirect("/scoreManage.jsp");
     }
 
     @Override

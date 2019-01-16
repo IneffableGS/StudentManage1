@@ -15,14 +15,14 @@
 <body>
 <form method="post" action="/home/courseAdd">
     <%--cno,cname,cdate,cteacher--%>
-    <input id="cname" name="cname" placeholder="课程名" />
-    <select id="cdate" name="cdate">
+    <input id="cname" sname="cname" placeholder="课程名" />
+    <select id="cdate" sname="cdate">
         <option value="第一学期" selected>第一学期</option>
         <option value="第二学期">第二学期</option>
         <option value="第三学期">第三学期</option>
         <option value="第四学期">第四学期</option>
     </select>
-    <input id="cteacher" name="cteacher" placeholder="任课教师" />
+    <input id="cteacher" sname="cteacher" placeholder="任课教师" />
     <button type="submit" >新增课程</button>
 </form>
 

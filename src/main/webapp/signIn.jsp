@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta sname="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta sname="description" content="">
+    <meta sname="author" content="">
 
     <title>登陆</title>
 
@@ -21,9 +21,9 @@
       <form class="form-signin" action="/userSignIn"  method="post">
         <h2 class="form-signin-heading text-center">用户登录</h2>
         <label for="inputUsername" class="sr-only">用户名</label>
-        <input type="text" id="inputUsername" class="form-control" name="username" placeholder="用户名" required autofocus>
+        <input type="text" id="inputUsername" class="form-control" sname="username" placeholder="用户名" required autofocus>
         <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" class="form-control" name="password" placeholder="密码" required>
+        <input type="password" id="inputPassword" class="form-control" sname="password" placeholder="密码" required>
         <div class="container" id="errmsg"><%=session.getAttribute("errmsg") %></div>
         <button class="btn btn-lg btn-primary btn-block" type="submit">登陆</button>
         <a role="button" href="signUp.jsp" class="btn btn-lg btn-info btn-block"  >还没账号？注册一个</a>

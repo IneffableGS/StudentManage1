@@ -13,9 +13,9 @@
 <body>
 <form action="/InquiryCourse">
     输入查询条件：
-    <input type="text" name="value" value=""><br>
+    <input type="text" sname="value" value=""><br>
     选择查询方式
-    <select name="col">
+    <select sname="col">
         <option value=""> 请选择 </option>
         <option value="cdate"> 学期 </option>
         <option value="cteacher">教师 </option>
@@ -23,8 +23,8 @@
         <option value="cname">课程名 </option>
 
     </select><br>
-    <input type="submit" name="submit" value=" 查询 ">
-    <input type="button" name="index" value=" 返回主页面 ">
+    <input type="submit" sname="submit" value=" 查询 ">
+    <input type="button" sname="index" value=" 返回主页面 ">
 </form>
 
 </body>
