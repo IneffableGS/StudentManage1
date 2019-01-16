@@ -22,7 +22,9 @@ public class ScoreDelete extends HttpServlet {
 
         int sno = Integer.parseInt(req.getParameter("sno"));
         int cno = Integer.parseInt(req.getParameter("cno"));
-        String sql = "delete from stuman.score where sno="+sno+"and cno = "+cno+";";
+        String sql = "delete from stuman.sc where sno="+sno+" and cno = "+cno+";";
+        System.out.println(sql);
+
         dbConn.execute(sql);
         resp.sendRedirect("scoreQuery");
     }

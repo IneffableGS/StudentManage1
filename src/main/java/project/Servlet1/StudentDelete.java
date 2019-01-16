@@ -20,6 +20,8 @@ public class StudentDelete extends HttpServlet {
         DBConn dbConn = new DBConn();
 
         int sno = Integer.parseInt((String)req.getParameter("sno"));
+        String sql0 = "delete from stuman.sc where sno = "+sno+";";
+        dbConn.execute(sql0);
         String sql = "delete from stuman.student where sno = "+sno+";";
         dbConn.execute(sql);
         resp.sendRedirect("studentQuery");

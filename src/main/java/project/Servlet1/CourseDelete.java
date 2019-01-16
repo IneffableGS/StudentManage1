@@ -26,8 +26,10 @@ public class CourseDelete extends HttpServlet {
         int cno =  Integer.parseInt((String)(req.getParameter("cno")));
         out.print("cno : "+cno);
 
-        String sql1 = "delete from stuman.course where cno = "+cno+"; ";
+        String sql0 = "delete from stuman.sc where cno = "+cno+"; ";
+        dbConn.execute(sql0);
 
+        String sql1 = "delete from stuman.course where cno = "+cno+"; ";
         dbConn.execute(sql1);
         resp.sendRedirect("courseQuery");
 

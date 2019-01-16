@@ -101,6 +101,5 @@ values ('小明'),
 # select max(score) as max,min(score) as min,avg(score)as avg
 # from stuman.sc;
 #
-
-
+delete from stuman.sc where sno=6 and cno = 5;
 
