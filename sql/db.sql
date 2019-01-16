@@ -57,50 +57,50 @@ values ('小明'),
        ('小华'),
        ('小林');
 
-# 清空数据库内容
-set foreign_key_checks = 0;
-truncate stuman.student;
-truncate stuman.course;
-truncate stuman.sc;
-set foreign_key_checks = 1;
-
-
-delete
-from stuman.admin
-where id = 2;
-
-# 查询测试使用
-select *
-from stuman.admin;
-
-
-select *
-from stuman.course;
-
-select *
-from stuman.student;
-
-select *
-from stuman.sc;
-truncate stuman.sc;
-
-# insert into stuman.sc(sno,cno,score) value ("+sno+","+cno+","+score+");
-
-select c.cno,c.cname,c.cdate,c.cteacher,s.sno,s.sname,sc.score
-from stuman.course c,
-     stuman.student s,
-     stuman.sc sc
-where c.cno = sc.cno
-  and s.sno = sc.sno;
-
-
-select count(*) as num
-from stuman.sc
-where score >= 90;
-
-select max(score) as max,min(score) as min,avg(score)as avg
-from stuman.sc;
-
+# # 清空数据库内容
+# set foreign_key_checks = 0;
+# truncate stuman.student;
+# truncate stuman.course;
+# truncate stuman.sc;
+# set foreign_key_checks = 1;
+#
+#
+# delete
+# from stuman.admin
+# where id = 2;
+#
+# # 查询测试使用
+# select *
+# from stuman.admin;
+#
+#
+# select *
+# from stuman.course;
+#
+# select *
+# from stuman.student;
+#
+# select *
+# from stuman.sc;
+# truncate stuman.sc;
+#
+# # insert into stuman.sc(sno,cno,score) value ("+sno+","+cno+","+score+");
+#
+# select c.cno,c.cname,c.cdate,c.cteacher,s.sno,s.sname,sc.score
+# from stuman.course c,
+#      stuman.student s,
+#      stuman.sc sc
+# where c.cno = sc.cno
+#   and s.sno = sc.sno;
+#
+#
+# select count(*) as num
+# from stuman.sc
+# where score >= 90;
+#
+# select max(score) as max,min(score) as min,avg(score)as avg
+# from stuman.sc;
+#
 
 
 
