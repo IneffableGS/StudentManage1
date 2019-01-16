@@ -13,5 +13,9 @@
   <body>
   <a href="signIn.jsp">登陆</a>
   <a href="signUn.jsp">注册</a>
+
+  <script>
+      window.location.href = "signIn.jsp";
+  </script>
   </body>
 </html>

@@ -21,10 +21,12 @@ create table stuman.student (
   sname varchar(255)
 );
 
+drop table if exists stuman.sc;
 create table stuman.sc (
-  cno   int primary key,
-  sno   int default 0,
-  score int default 0
+  cno   int not null ,
+  sno   int not null ,
+  score int default 0,
+  primary key (cno,sno)
 );
 
 alter table stuman.sc
@@ -62,9 +64,15 @@ truncate stuman.course;
 truncate stuman.sc;
 set foreign_key_checks = 1;
 
+
+delete
+from stuman.admin
+where id = 2;
+
 # 查询测试使用
 select *
 from stuman.admin;
+
 
 select *
 from stuman.course;
@@ -72,6 +80,11 @@ from stuman.course;
 select *
 from stuman.student;
 
+select *
+from stuman.sc;
+truncate stuman.sc;
+
+# insert into stuman.sc(sno,cno,score) value ("+sno+","+cno+","+score+");
 
 select c.cno,c.cname,c.cdate,c.cteacher,s.sno,s.sname,sc.score
 from stuman.course c,
@@ -79,6 +92,15 @@ from stuman.course c,
      stuman.sc sc
 where c.cno = sc.cno
   and s.sno = sc.sno;
+
+
+select count(*) as num
+from stuman.sc
+where score >= 90;
+
+select max(score) as max,min(score) as min,avg(score)as avg
+from stuman.sc;
+
 
 
 

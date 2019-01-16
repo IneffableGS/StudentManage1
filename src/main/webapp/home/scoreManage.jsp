@@ -1,6 +1,8 @@
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.LinkedList" %>
-<%@ page import="project.obj.Student" %><%--
+<%@ page import="project.obj.Student" %>
+<%@ page import="project.obj.Course" %>
+<%@ page import="project.obj.Score" %><%--
   Created by IntelliJ IDEA.
   User: wangguanhua
   Date: 2019/1/16
@@ -14,49 +16,69 @@
 </head>
 <body>
 <%
-    LinkedList<Student> students = session.getAttribute("student;")
+    LinkedList<Student> students = (LinkedList<Student>) session.getAttribute("students");
+    LinkedList<Course> courses = (LinkedList<Course>) session.getAttribute("courses");
+    LinkedList<Score> scores = (LinkedList<Score>) session.getAttribute("scores");
 %>
-<form method="post" action="/home/courseAdd">
+<form method="post" action="/home/scoreAdd">
     <%--cno,cname,cdate,cteacher--%>
-    <select id="sno" sname="sno">
-        <%--<option value="" selected>请选择</option>--%>
 
-        <option value="第二学期">第二学期</option>
-        <option value="第三学期">第三学期</option>
-        <option value="第四学期">第四学期</option>
+    <br>
+    <select id="sno" name="sno">
+        <%
+            for (Student s : students) {
+        %>
+        <option value="<%=s.getSno()%>"><%=s.getName() + " " + s.getSno()%>
+        </option>
+        <%
+            }
+        %>
     </select>
-    <select id="cdate" sname="cdate">
-        <option value="第一学期" selected>第一学期</option>
-        <option value="第二学期">第二学期</option>
-        <option value="第三学期">第三学期</option>
-        <option value="第四学期">第四学期</option>
+    <select id="cno" name="cno">
+        <%
+            for (Course c : courses) {
+        %>
+        <option value="<%=c.getCno()%>"><%=c.getCname() + " " + c.getCno()%>
+        </option>
+        <%
+            }
+        %>
     </select>
-    <input id="cteacher" sname="cteacher" placeholder="成绩" type="number"/>
-    <button type="submit">新增课程</button>
+    <br>
+    <input id="cteacher" name="score" placeholder="成绩" type="number" value="60"/>
+    <br>
+    <button type="submit">录入成绩</button>
 </form>
 
 <table>
     <tr>
-        <th>课程号</th>
-        <th>课程名</th>
         <th>学生号</th>
         <th>学生名</th>
+        <th>课程号</th>
+        <th>课程名</th>
         <th>课程所属学期</th>
         <th>任课教师</th>
         <th>成绩</th>
         <th>操作</th>
     </tr>
     <%--展示--%>
+    <%
+        for (Score s : scores) {
+    %>
     <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td><%=s.getSno()%></td>
+        <td><%=s.getSname()%></td>
+        <td><%=s.getCno()%></td>
+        <td><%=s.getCname()%></td>
+        <td><%=s.getCdate()%></td>
+        <td><%=s.getCteacher()%></td>
+        <td><%=s.getScore()%></td>
+        <td><a href="/home/scoreDelete?sno=<%=s.getSno()%>&cno=<%=s.getCno()%>">删除</a></td>
     </tr>
     <%
-        List courses = (LinkedList) session.getAttribute("courseList");
+        }
     %>
+
 </table>
 <ul style="display: inline-block; list-style: none">
     <li><a href="Home.jsp">返回首页</a></li>

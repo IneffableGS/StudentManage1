@@ -51,7 +51,7 @@ public class ScoreQuery extends HttpServlet {
 
 
 //        todo：查询学生列表
-        String sql2 = "select * from stuman.studnet";
+        String sql2 = "select * from stuman.student";
         List<Student> students = new LinkedList<>();
         ResultSet rs2 = dbConn.executeQuery(sql2);
 
@@ -90,7 +90,7 @@ public class ScoreQuery extends HttpServlet {
             System.out.println("ERROR! msg:"+e.getMessage());
         }
         session.setAttribute("scores", scores);
-        resp.sendRedirect("/scoreManage.jsp");
+        resp.sendRedirect("scoreManage.jsp");
     }
 
     @Override

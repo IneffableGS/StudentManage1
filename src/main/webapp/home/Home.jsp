@@ -16,9 +16,9 @@
 <ul>
     <li><a href="/home/courseQuery">课程管理</a></li>
     <li><a href="/home/studentQuery">学生管理</a></li>
-    <li><a href="#">成绩录入</a></li>
-    <li><a href="#">查看成绩</a></li>
-    <li><a href="#">成绩报告</a></li>
+    <li><a href="/home/scoreQuery">成绩管理</a></li>
+    <%--<li><a href="#">查看成绩</a></li>--%>
+    <li><a href="/home/reportQuery">成绩报告</a></li>
 </ul>
 </body>
 </html>

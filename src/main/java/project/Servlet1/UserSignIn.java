@@ -36,6 +36,7 @@ public class UserSignIn extends HttpServlet {
         //获取前页传来的数据
         String  username = req.getParameter("username");
         String password = req.getParameter("password");
+        System.out.println(username+"\t"+password);
         //连接数据库 查询结果
         DBConn dbConn = new DBConn();
         String sql = "select * from stuman.admin where username = '"+username+"' and password = '"+password+"';";
