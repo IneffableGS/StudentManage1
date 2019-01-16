@@ -12,11 +12,12 @@
 </head>
 <body>
 <table border="1">
-
+    <tr>
         <td><%=session.getAttribute()%></td>
-        <td><%=%></td>
-        <td><%=%></td>
+        <td><%=1 %></td>
+        <td><%=1 %></td>
 
     </tr>
+</table>
 </body>
 </html>

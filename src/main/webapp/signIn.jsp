@@ -24,10 +24,10 @@
         <input type="text" id="inputUsername" class="form-control" name="username" placeholder="用户名" required autofocus>
         <label for="inputPassword" class="sr-only">Password</label>
         <input type="password" id="inputPassword" class="form-control" name="password" placeholder="密码" required>
-
-        <button class="btn btn-lg btn-primary btn-block" type="submit">登陆</button>
-        <button class="btn btn-lg btn-info btn-block" type="button">还没账号？注册一个</button>
         <div class="container" id="errmsg"><%=session.getAttribute("errmsg") %></div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">登陆</button>
+        <a role="button" href="signUp.jsp" class="btn btn-lg btn-info btn-block"  >还没账号？注册一个</a>
+
         <%
           session.removeAttribute("errmsg");
         %>

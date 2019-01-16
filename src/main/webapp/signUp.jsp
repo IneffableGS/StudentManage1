@@ -18,17 +18,28 @@
 
     <div class="container">
 
-      <form class="form-signin">
+      <form class="form-signin" method="post" action="/userSignUp">
         <h2 class="form-signin-heading text-center">用户注册</h2>
         <label for="inputUsername" class="sr-only">用户名</label>
-        <input type="text" id="inputUsername" class="form-control" placeholder="用户名" required autofocus>
+        <input type="text" id="inputUsername" name="username" class="form-control" placeholder="用户名" required autofocus>
         <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="密码" required>
+        <input type="password" id="inputPassword" name="password" class="form-control" placeholder="密码" required>
+
+        <div class="container" id="errmsg"><%=session.getAttribute("errmsg") %></div>
 
         <button class="btn btn-lg btn-primary btn-block" type="submit">注册</button>
-        <button class="btn btn-lg btn-info btn-block" type="submit">已有账号？返回登陆</button>
+        <a role="button" href="signIn.jsp" class="btn btn-lg btn-info btn-block" >已有账号？返回登陆</a>
+
+        <%
+          session.removeAttribute("errmsg");
+        %>
       </form>
 
     </div> <!-- /container -->
+    <script>
+        if (document.getElementById("errmsg").innerText == "null") {
+            document.getElementById("errmsg").style.display = 'none';
+        }
+    </script>
   </body>
 </html>

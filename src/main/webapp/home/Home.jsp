@@ -11,9 +11,11 @@
     <title>管理中心</title>
 </head>
 <body>
-<h1>这里是管理中心，恭喜你登陆成功</h1>
+<h3>欢迎您，<%=session.getAttribute("user")%></h3>
+<h1>这里是管理中心</h1>
 <ul>
-    <li><a href="#">课程管理</a></li>
+    <li><a href="/home/courseQuery">课程管理</a></li>
+    <li><a href="/home/studentQuery">学生管理</a></li>
     <li><a href="#">成绩录入</a></li>
     <li><a href="#">查看成绩</a></li>
     <li><a href="#">成绩报告</a></li>

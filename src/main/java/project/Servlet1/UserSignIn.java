@@ -65,7 +65,7 @@ public class UserSignIn extends HttpServlet {
 
         if(signIn){
             session.setAttribute("user",user);
-            resp.sendRedirect("/Home.jsp");
+            resp.sendRedirect("/home/Home.jsp");
             return;
         }else {
             session.setAttribute("errmsg",message);
